@@ -8,3 +8,4 @@ from .models import User
 class UserAdmin(auth_admin.UserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
+    list_display = ('username', 'email', 'is_staff')
