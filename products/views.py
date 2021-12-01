@@ -19,7 +19,7 @@ class ProductListView(ListView):
         queryset = Product.available.all()
 
         category_slug = self.kwargs.get("slug")
-        if category_slug == True:
+        if category_slug:
             self.category = get_object_or_404(Category, slug=category_slug)
             queryset = queryset.filter(category=self.category)
 
